@@ -106,14 +106,14 @@ export default function SignIn() {
           }
         )
         .then((response) => {
-          const tkn = JSON.stringify(response.data.token);
           dispatch(
             login({
-              token: tkn,
+              token: response.data.token,
               mobile: mobile,
             })
           );
-          settoken(tkn);
+          const token = response.data.token;
+          settoken(token);
           console.log(response.data.token);
         })
         .then(history.push("/"))
