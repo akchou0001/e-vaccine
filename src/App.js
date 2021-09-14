@@ -13,7 +13,7 @@ import Schedule from "./pages/Schedule";
 import { login, logout } from "./features/userSlice";
 
 function App() {
-  const token = useSelector(selectUser);
+  const user = useSelector(selectUser);
   // const dispatch = useDispatch();
   // useEffect(() => {
   //   //   auth.onAuthStateChanged((userAuth) => {
@@ -32,7 +32,7 @@ function App() {
   // }, [token]);
   return (
     <div className="App">
-      {!token ? (
+      {!user ? (
         <Router>
           <Switch>
             <Route path="/login">
