@@ -1,0 +1,12 @@
+.schedule {
+  display: flex;
+  flex-direction: column;
+}
+.slot > h2 {
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: underline;
+  color: #002060;
+}

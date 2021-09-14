@@ -1,0 +1,125 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_header {
+  background-color: #ffd968;
+}
+.main_header > h1 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 40px;
+}
+.main_header > h3 {
+  font-weight: 700;
+  font-size: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+.helpline {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #f7fcff;
+}
+.helpline > p {
+  display: flex;
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: auto;
+}
+.numbers {
+  display: flex;
+  flex-direction: column;
+}
+.numbers > p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.numbers > span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0056b3;
+}
+.how {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.how > p {
+  font-size: 30px;
+  text-transform: capitalize;
+  color: #002093;
+}
+.card-center > .card {
+  max-width: 350px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7fcff;
+}
+.card:hover {
+  box-shadow: 0 16px 70px -12.125px rgba(0, 0, 0, 0.3);
+}
+.card-img-top {
+  width: 180px;
+  margin: auto auto -60px;
+  z-index: 99;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .card-img-top {
+    width: 140px;
+  }
+}
+.card-body {
+  background-color: #f7fcff;
+  box-shadow: 0 1px 2px #999;
+  border: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 938px) {
+  .card-body {
+    min-height: 235px;
+  }
+}
+.card-title {
+  font-weight: 600;
+  padding-top: 80px;
+  line-height: 21px;
+  text-align: center;
+  color: #002060;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .card-title {
+    font-size: 14px;
+  }
+}
+.card-text {
+  text-align: center;
+  text-transform: uppercase;
+  color: #002060;
+  text-decoration: underline;
+}
+.card-center {
+  width: 60vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 30px;
+}
+
+@media screen and (min-width: 776px) {
+  .card-center {
+    width: 90vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  .card-center {
+    width: 95vw;
+    max-width: 1170px;
+  }
+}
