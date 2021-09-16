@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "./features/userSlice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./features/userSlice";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -12,6 +12,22 @@ import Schedule from "./pages/Schedule";
 
 function App() {
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log("user.....", user.token);
+    if (user) {
+      //logged in
+      dispatch(
+        login({
+          token: user.token,
+          mobile: user.mobile,
+        })
+      );
+    } else {
+      //logged out
+      dispatch(logout());
+    }
+  }, [user.token]);
   return (
     <div className="App">
       {!user.token ? (
