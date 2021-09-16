@@ -55,7 +55,6 @@ export default function SignIn() {
   const history = useHistory();
   const [mobile, setmobile] = useState("");
   const [txnId, settxnId] = useState("");
-  const [token, settoken] = useState("");
   const [otp, setotp] = useState("");
   const dispatch = useDispatch();
 
@@ -112,15 +111,12 @@ export default function SignIn() {
               mobile: mobile,
             })
           );
-          const token = response.data.token;
-          settoken(token);
-          console.log(response.data.token);
+          console.log(response.data);
         })
         .then(history.push("/"))
         .catch(function (error) {
           console.log("error..............", error);
         });
-      console.log(token);
     }
     getToken();
   };

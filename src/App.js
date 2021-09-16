@@ -1,38 +1,20 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { selectUser } from "./features/userSlice";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
-// import { auth } from "./firebase";
 import Main from "./pages/Main";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Schedule from "./pages/Schedule";
-import { login, logout } from "./features/userSlice";
 
 function App() {
   const user = useSelector(selectUser);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   //   auth.onAuthStateChanged((userAuth) => {
-  //   if (token) {
-  //     //logged in
-  //     dispatch(
-  //       login({
-  //         token: token,
-  //       })
-  //     );
-  //   } else {
-  //     //logged out
-  //     dispatch(logout());
-  //   }
-  //   //   });
-  // }, [token]);
   return (
     <div className="App">
-      {!user ? (
+      {!user.token ? (
         <Router>
           <Switch>
             <Route path="/login">
